@@ -3,7 +3,7 @@
 # The namespace of the collection. This can be a company/brand/organization or product namespace under which all
 # content lives. May only contain alphanumeric lowercase characters and underscores. Namespaces cannot start with
 # underscores or numbers and cannot contain consecutive underscores
-namespace: termlen0
+namespace: redhattelco
 
 # The name of the collection. Has the same character restrictions as 'namespace'
 name: caretaker
@@ -45,7 +45,7 @@ tags: [ios, eos, network, gitops, netdevops]
 #  "ansible.builtin": "*"
 
 # The URL of the originating SCM repository
-repository: https://github.com/termlen0/caretaker_collection
+repository: https://github.com/redhattelco/caretaker_collection
 
 # The URL to any online docs
 documentation: https://termlen0.github.io/2020/11/28/observations/
@@ -54,4 +54,4 @@ documentation: https://termlen0.github.io/2020/11/28/observations/
 homepage: https://termlen0.github.io/2020/11/28/observations/
 
 # The URL to the collection issue tracker
-issues: https://github.com/termlen0/caretaker_collection/issue/tracker
+issues: https://github.com/redhattelco/caretaker_collection/issue/tracker
