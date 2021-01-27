@@ -1,5 +1,11 @@
 ---
-- name: Push device configs
+- name: Enable archive
   ios_config:
-    replace: config
-    src: "/archived_configs/{{ inventory_hostname }}/config/running.cfg"
+    parents:
+      - archive
+    lines:
+      - "path flash:"
+- name: Push device configs
+  command: "scp /archived_configs/{{ inventory_hostname }}/config/running.cfg {{ inventory_hostname }}:/running.config"
+  become: yes
+  become_user: ec2-user
