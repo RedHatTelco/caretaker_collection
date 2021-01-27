@@ -21,4 +21,5 @@
 - name: Replace config
   ios_command:
     commands:
+      - "dir flash:"
       - configure replace flash:running.config force
