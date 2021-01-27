@@ -2,6 +2,9 @@
 - name: "ios.backup: fetch network configuration"
   ios_config:
     backup: "true"
+    backup_options:
+      dir_path: "/running_configs/{{ inventory_hostname }}"
+      filename: running.cfg
   register: r_ios_config
 
 - name: "ios.backup: remove non configuration lines"
