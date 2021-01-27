@@ -21,4 +21,4 @@
 - name: Replace config
   ios_command:
     commands:
-      - configure replace flash:running.config
+      - configure replace flash:running.config force
