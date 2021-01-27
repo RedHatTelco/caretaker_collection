@@ -23,6 +23,8 @@
     commands:
       - show privilege
       - show user
+- debug:
+    msg: "{{ hostvars[inventory_hostname] }}"
 
 - name: Replace config
   ios_command:
