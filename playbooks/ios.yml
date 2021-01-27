@@ -1,4 +1,5 @@
 ---
-- name: IOS devices
-  debug:
-    msg: "{{ inventory_hostname }} is not within scope"
+- name: Push device configs
+  ios_config:
+    replace: config
+    src: "/archived_configs/{{ inventory_hostname }}/config/running.cfg"
