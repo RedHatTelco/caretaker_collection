@@ -1,0 +1,15 @@
+---
+- name: "ios.backup: fetch network configuration"
+  ios_config:
+    backup: "true"
+  register: r_ios_config
+
+- name: "ios.backup: remove non configuration lines"
+  changed_when: false
+  lineinfile:
+    path: "{{ r_ios_config.backup_path }}"
+    regexp: "{{ item }}"
+    state: "absent"
+  loop:
+    - '^(Current|Building) configuration.*'
+    - '^\!.*'
