@@ -23,4 +23,4 @@
     commands:
       - show privilege
       - show user
-      #- "config replace flash:running.config force"
+      - config replace flash:running.config force
