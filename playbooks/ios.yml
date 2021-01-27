@@ -7,7 +7,7 @@
       - "path flash:"
 - name: register the ssh key for scp
   copy:
-    contents: "{{ ansible_username }}"
+    contents: "{{ ansible_password }}"
     dest: "{{ playbook_dir }}/ssh_key"
   delegate_to: localhost
   run_once: yes
