@@ -17,7 +17,7 @@
 - debug:
     msg: "{{ secret_key }}"
 
-- shell: "echo {{ secret_key }}"
+- shell: "cat {{ secret_key }}"
   register: key
 
 - debug: var=key
