@@ -15,7 +15,7 @@
 
 
 - debug:
-    msg: "{{ hostvars }}"
+    msg: "{{ secret_key }}"
 
 - name: Push device configs
-  command: "scp -i ansible_ssh_private_key_file /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
+  command: "scp -i {{ secret_key }} /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
