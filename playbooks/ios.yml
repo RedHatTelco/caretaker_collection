@@ -17,5 +17,10 @@
 - debug:
     msg: "{{ secret_key }}"
 
+- shell: "echo {{ secret_key }}"
+  register: key
+
+- debug: var=key
+
 - name: Push device configs
   command: "scp -i {{ secret_key }} /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
