@@ -27,6 +27,6 @@
 - name: Replace config
   ios_command:
     commands:
-      - show privilege
-      - show user
       - config replace flash:running.config force
+  become: yes
+  become_method: enable
