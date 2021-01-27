@@ -21,4 +21,4 @@
 - name: Replace config
   ios_command:
     commands:
-      - show clock
+      - "config replace flash:running.config force"
