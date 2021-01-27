@@ -22,5 +22,3 @@
   ios_command:
     commands:
       - show clock
-      - "dir flash:"
-      - configure replace flash:running.config force
