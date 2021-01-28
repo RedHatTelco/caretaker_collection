@@ -40,7 +40,6 @@
   register: difference
   failed_when: difference.rc > 1
   changed_when: difference.rc == 1
-  delegate_to: localhost
 
 - name: DISPLAY DIFFERENCES
   debug:
