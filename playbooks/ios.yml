@@ -1,7 +1,13 @@
 ---
+- name: Ensure that the caretaker user is present
+  ios_user:
+    name: caretaker
+    nopassword: true
+    sshkey: ../files/caretaker_telco.pub
+    state: present
+
 - name: Push device configs
-  command: "scp -i /home/ec2-user/.ssh/aws-private.pem -o StrictHostKeyChecking=no  /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
-  become: yes
+  command: "scp -i {{ secret_key }} -o StrictHostKeyChecking=no  /archived_configs/{{ inventory_hostname }}/config/running.cfg caretaker@{{ inventory_hostname }}:/running.config"
 
 - name: Enable archive
   ios_config:
