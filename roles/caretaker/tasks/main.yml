@@ -45,8 +45,6 @@
   debug:
     var: difference.stdout
   when: difference.rc != 0
-  delegate_to: localhost
-  run_once: true
 
 - name: FAIL IF THERE ARE DIFFERENCES
   fail:
