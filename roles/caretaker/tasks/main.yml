@@ -41,7 +41,6 @@
   failed_when: difference.rc > 1
   changed_when: difference.rc == 1
   delegate_to: localhost
-  run_once: true
 
 - name: DISPLAY DIFFERENCES
   debug:
