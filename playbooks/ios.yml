@@ -2,6 +2,7 @@
 - name: Ensure that the caretaker user is present
   ios_user:
     name: caretaker
+    privilege: 15
     nopassword: true
     sshkey: ../files/caretaker_telco.pub
     state: present
