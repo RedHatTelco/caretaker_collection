@@ -1,4 +1,8 @@
 ---
+- name: Push device configs
+  command: "scp -i /home/ec2-user/.ssh/aws-private.pem -o StrictHostKeyChecking=no  /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
+  become: yes
+
 - name: Enable archive
   ios_config:
     parents:
@@ -13,22 +17,22 @@
 #   delegate_to: localhost
 #   run_once: yes
 
-- name: Replace config
-  ios_command:
-    commands:
-      - show privilege
-      - show user
+# - name: Replace config
+#   ios_command:
+#     commands:
+#       - show privilege
+#       - show user
 
 
-- name: Push device configs
-  command: "scp -i /home/ec2-user/.ssh/aws-private.pem -o StrictHostKeyChecking=no  /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
-  become: yes
+# - name: Push device configs
+#   command: "scp -i /home/ec2-user/.ssh/aws-private.pem -o StrictHostKeyChecking=no  /archived_configs/{{ inventory_hostname }}/config/running.cfg ec2-user@{{ inventory_hostname }}:/running.config"
+#   become: yes
 
-- name: Replace config
-  ios_command:
-    commands:
-      - show privilege
-      - show user
+# - name: Replace config
+#   ios_command:
+#     commands:
+#       - show privilege
+#       - show user
 
 - name: Replace config
   ios_command:
